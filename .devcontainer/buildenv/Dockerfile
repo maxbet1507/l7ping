@@ -1,5 +1,7 @@
 FROM golang:1.12-stretch
 
+RUN apt update && apt install -y git-flow
+
 RUN go get -u -v github.com/ramya-rao-a/go-outline && \
     go get -u -v github.com/acroca/go-symbols && \
     go get -u -v github.com/mdempsky/gocode && \
