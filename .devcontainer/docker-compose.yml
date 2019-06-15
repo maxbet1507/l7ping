@@ -1,0 +1,26 @@
+version: '3'
+services:
+  buildenv:
+    build: ./buildenv
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - ~/.gitconfig:/root/.gitconfig
+      - ..:/go/src/github.com/maxbet1507/l7ping
+    command: sleep infinity
+    depends_on:
+      - mysql
+      - redis
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_DATABASE=dbname
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+
+  redis:
+    image: redis:5.0
