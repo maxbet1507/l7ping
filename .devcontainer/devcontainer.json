@@ -1,0 +1,12 @@
+{
+    "name": "l7ping",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "buildenv",
+    "workspaceFolder": "/go/src/github.com/maxbet1507/l7ping",
+    "extensions": [
+        "ms-vscode.go"
+    ],
+    "settings": {
+        "go.gopath": "/go"
+    }
+}
